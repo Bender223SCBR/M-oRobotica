@@ -2,8 +2,6 @@
 
 Este projeto utiliza a câmera do computador para detectar os movimentos da mão de um usuário em tempo real e os traduz em comandos para controlar uma mão robótica feita com servo motores e conectada a um Arduino.
 
-![Exemplo de Mão Robótica](https://i.imgur.com/your-image-placeholder.png) ## Visão Geral
-
 O script principal, escrito em Python, usa as bibliotecas **OpenCV** para capturar o vídeo da webcam e **MediaPipe** para identificar os 21 pontos-chave (*landmarks*) da mão. Com base nas coordenadas desses pontos, o programa calcula a distância entre a ponta dos dedos e a base da mão, convertendo essa medida em uma porcentagem de "abertura" para cada dedo.
 
 Esses dados (cinco valores percentuais, um para cada dedo) são enviados via comunicação serial para uma placa Arduino, que por sua vez controla o ângulo de cinco servo motores correspondentes, replicando o movimento da mão do usuário em tempo real.
